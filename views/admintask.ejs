@@ -1,0 +1,47 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+            <li class="nav-item">
+                
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/admindashboard">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/logout">logout</a>
+          </li>
+          
+    </ul>
+      </div>
+    </div>
+  </nav>
+
+  
+  <table class="table caption-top">
+    <caption>Task</caption>
+    <thead>
+      <tr>
+        
+        <th scope="col">Task</th>
+        <th scope="col">Assigned To</th>
+        <th scope="col">Action</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+        <% for(tasks of task){%>
+      <tr>
+      
+        <td><%=tasks.task %></td>
+        <td><%=tasks.assigned %></td>
+        <td><a href="/deletetask/<%=tasks.id%>" class="btn btn-secondary">Delete</a> <a href="/edittask/<%=tasks.id%>" class="btn btn-secondary">Edit</a></td>
+     
+      </tr>
+      <%}%>
+    </tbody>
+  </table>
+  <div class="container">
+    <div class="card card-body"><a href="/admindashboard" class="btn btn-secondary">Return to Dashboard</a></div>
+</div>
